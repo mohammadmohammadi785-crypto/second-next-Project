@@ -5,19 +5,19 @@ function randomNumber(num: number) {
 export default async function page({
   params,
 }: {
-  params: Promise<{ post: string; postid: string }>;
+  params: Promise<{ post: string; productid: string }>;
 }) {
-  const postid = (await params).postid;
+  const { productid } = await params;
   const getrandomNumber = randomNumber(2);
   if (getrandomNumber === 1) {
-    throw new Error("Post page error");
+    throw new Error("Product page error");
   }
-  if (+postid > 1000) {
+  if (+productid > 1000) {
     return notFound();
   }
   return (
     <div>
-      <h1 className="text-5xl">this is the product Page {postid}</h1>
+      <h1 className="text-5xl">this is the product Page {productid}</h1>
     </div>
   );
 }
