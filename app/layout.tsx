@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
-        <nav className="flex justify-between px-6 items-center bg-gray-600 text-2xl text-white w-full h-15">
+        <nav className="flex fixed z-20 justify-between px-6 items-center bg-gray-600 text-2xl text-white w-full h-15">
           <Link href="/">Home</Link>
           <Link href="/dashboard">Dashboard</Link>
           <Link href="/product">Product</Link>
